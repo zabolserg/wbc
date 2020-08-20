@@ -1,0 +1,12 @@
+# routes.yml
+index:
+    path:     /
+    defaults: { _controller: '\App\Controllers\DefaultController::index' }
+
+admin:
+    path:     /admin
+    defaults: { _controller: '\App\Controllers\DefaultController::admin' }
+   
+errors:
+    path:     /404
+    defaults: { _controller: '\App\Controllers\DefaultController::notFound' }

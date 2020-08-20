@@ -1,0 +1,9 @@
+RewriteEngine "on"
+RewriteBase "/test-app/"
+
+# rewrite non-existing and .php files in system folders to 404 
+RewriteRule "^(app|vendor)/.*$" "/404" [QSA,NC]
+
+# all other we are rewriting to index
+RewriteCond "%{REQUEST_URI}" "!=/index.php"
+RewriteRule "^(.*)$" index.php?/$1 [L]
